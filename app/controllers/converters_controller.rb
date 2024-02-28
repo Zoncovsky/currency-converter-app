@@ -1,10 +1,14 @@
 class ConvertersController < ApplicationController
   def index
-    amount = params[:amount].to_f
+    @user = User.last
+
+    @converted_amount = nil
+
+    return unless params[:base_currency].present? && params[:target_currency].present? && params[:amount].present?
+
     base_currency = params[:base_currency]
     target_currency = params[:target_currency]
-
-    converter_service = CurrencyConverterService.new
-    @converted_amount = converter_service.convert_currency(amount, base_currency, target_currency)
+    amount = params[:amount].to_f
+    @converted_amount = CurrencyConverterService.new.convert_currency(amount, base_currency, target_currency)
   end
 end

@@ -1,0 +1,47 @@
+<div class="card">
+  <div class="card-body">
+    <%= form_for @user, url: update_base_currency_path, method: :patch do |f| %>
+      <div class="row">
+        <div class="col">
+          <div class="field">
+            <%= f.select :base_currency,
+              currency_options,
+              {},
+              { class: 'form-control', placeholder: 'Base currency' } %>
+          </div>
+        </div>
+        <div class="col">
+          <div class="field">
+            <div class="actions">
+              <%= f.submit 'Update', class: 'btn btn-outline-success' %>
+            </div>
+          </div>
+        </div>
+      </div>
+    <% end %>
+
+    <h1 class="text-center mt-2">
+      Exchange Rates
+    </h1>
+    <% if @exchange_rates.present? %>
+      <div class="table-responsive">
+        <table class="table table-striped border">
+          <thead>
+            <tr>
+              <th>Currency</th>
+              <th>Exchange Rate</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% @exchange_rates.each do |currency, exchange_rate| %>
+              <tr>
+                <td><%= currency %></td>
+                <td><%= exchange_rate %></td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
+    <% end %>
+  </div>
+</div>

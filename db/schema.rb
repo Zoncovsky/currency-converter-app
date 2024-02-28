@@ -10,14 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 20_240_228_101_915) do
+ActiveRecord::Schema[7.0].define(version: 20_240_228_193_933) do
   # These are extensions that must be enabled in order to support this database
   enable_extension 'plpgsql'
 
   create_table 'converters', force: :cascade do |t|
-    t.string 'base_currency'
     t.string 'target_currency'
-    t.decimal 'amount', precision: 12, scale: 2
+    t.decimal 'amount'
+    t.datetime 'created_at', null: false
+    t.datetime 'updated_at', null: false
+  end
+
+  create_table 'users', force: :cascade do |t|
+    t.string 'name'
+    t.string 'base_currency'
     t.datetime 'created_at', null: false
     t.datetime 'updated_at', null: false
   end

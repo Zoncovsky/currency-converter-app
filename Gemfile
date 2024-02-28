@@ -7,6 +7,7 @@ gem 'bootsnap', require: false
 gem 'cssbundling-rails'
 gem 'jbuilder'
 gem 'jsbundling-rails'
+gem 'money'
 gem 'pg', '~> 1.1'
 gem 'puma', '~> 5.0'
 gem 'rails', '~> 7.0.8', '>= 7.0.8.1'
@@ -24,6 +25,7 @@ group :development, :test do
   gem 'faker'
   gem 'pry-rails'
   gem 'rspec-rails'
+  gem 'webmock'
 end
 
 group :development do
