@@ -274,7 +274,6 @@ DEPENDENCIES
   rspec-rails
   rubocop
   shoulda-matchers
-  sidekiq (~> 7.2)
   sidekiq-unique-jobs
   sprockets-rails
   stimulus-rails

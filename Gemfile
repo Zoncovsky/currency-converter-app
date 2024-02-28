@@ -12,11 +12,10 @@ gem 'puma', '~> 5.0'
 gem 'rails', '~> 7.0.8', '>= 7.0.8.1'
 gem 'redis', '~> 4.0'
 gem 'sidekiq-unique-jobs'
-gem 'sidekiq', '~> 7.2'
 gem 'sprockets-rails'
 gem 'stimulus-rails'
 gem 'turbo-rails'
-gem 'tzinfo-data', platforms: %i[ mingw mswin x64_mingw jruby ]
+gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 
 group :development, :test do
   gem 'byebug'

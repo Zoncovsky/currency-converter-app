@@ -4,15 +4,34 @@
   <div class="card-body text-center">
     <h1>Converter</h1>
     <hr>
-    <div class="row">
-      <div class="col">
-        <label for="exampleFormControlInput1" class="form-label">Basic rate</label>
-        <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+    <%= form_tag(converters_path, method: :get) do %>
+      <div class="row">
+        <div class="col">
+          <label class="form-label">
+            Amount:
+          </label>
+          <%= text_field_tag(:amount, params[:amount], class: 'form-control') %>
+        </div>
+        <div class="col">
+          <label class="form-label">
+            Base Currency:
+          </label>
+          <%= text_field_tag(:base_currency, params[:base_currency], class: 'form-control', placeholder: 'USD') %>
+        </div>
+        <div class="col">
+          <label class="form-label">
+            Target Currency:
+          </label>
+          <%= text_field_tag(:target_currency, params[:target_currency], class: 'form-control', placeholder: 'EUR') %>
+        </div>
+        <div class="col">
+          <label class="form-label">
+            Result:
+          </label>
+          <%= text_field_tag(:result, @converted_amount, class: 'form-control', readonly: true) %>
+        </div>
       </div>
-      <div class="col">
-        <label for="exampleFormControlInput1" class="form-label">Target rate</label>
-        <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
-      </div>
-    </div>
+      <input type="submit" value="Convert" class="btn btn-sm btn-outline-success mt-2">
+    <% end %>
   </div>
 </div>
