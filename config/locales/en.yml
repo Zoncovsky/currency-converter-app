@@ -1,2 +1,9 @@
 en:
-  hello: "Hello world"
+  converter:
+    currency_converter: Currency Converter
+    exchange_rates: Exchange Rates
+    currency: Currency
+    base_currency: Base currency
+    target_currency: Target Currency
+    amount: Amount
+    result: Converted Amount

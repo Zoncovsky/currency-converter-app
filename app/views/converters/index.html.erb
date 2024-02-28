@@ -1,15 +1,17 @@
-<h1>Currency Converter</h1>
+<h1>
+  <%= t('converter.currency_converter') %>
+</h1>
 <%= form_tag(converters_path, method: :get) do %>
   <div class="form-group">
-    <%= label_tag(:base_currency, 'Base Currency:') %>
+    <%= label_tag(:base_currency, t('converter.base_currency')) %>
     <%= text_field_tag(:base_currency, @user.base_currency, class: 'form-control', readonly: true) %>
   </div>
   <div class="form-group">
-    <%= label_tag(:target_currency, 'Target Currency:') %>
+    <%= label_tag(:target_currency, t('converter.target_currency')) %>
     <%= select_tag(:target_currency, options_for_select(Money::Currency.all.map { |c| [c.iso_code, c.iso_code] }), class: 'form-control') %>
   </div>
   <div class="form-group">
-    <%= label_tag(:amount, 'Amount:') %>
+    <%= label_tag(:amount, t('converter.amount')) %>
     <%= number_field_tag(:amount, nil, class: 'form-control', step: 'any') %>
   </div>
   <%= submit_tag('Convert', class: 'btn btn-primary mt-2') %>
@@ -17,7 +19,6 @@
 
 <% if @converted_amount.present? %>
   <div class="alert alert-success mt-2" role="alert">
-    <%= "Converted Amount: #{@converted_amount}" %>
+    <%= "#{t('converter.result')}: #{@converted_amount}" %>
   </div>
 <% end %>
-

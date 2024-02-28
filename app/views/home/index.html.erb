@@ -7,7 +7,7 @@
             <%= f.select :base_currency,
               currency_options,
               {},
-              { class: 'form-control', placeholder: 'Base currency' } %>
+              { class: 'form-control' } %>
           </div>
         </div>
         <div class="col">
@@ -21,15 +21,15 @@
     <% end %>
 
     <h1 class="text-center mt-2">
-      Exchange Rates
+      <%= t('converter.exchange_rate') %>
     </h1>
     <% if @exchange_rates.present? %>
       <div class="table-responsive">
         <table class="table table-striped border">
           <thead>
             <tr>
-              <th>Currency</th>
-              <th>Exchange Rate</th>
+              <th><%= t('converter.currency') %></th>
+              <th><%= t('converter.exchange_rate') %></th>
             </tr>
           </thead>
           <tbody>
